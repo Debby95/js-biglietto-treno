@@ -11,27 +11,29 @@ Stampare in HTML una lista con eta inserità, km inseriti ed il prezzo finale
 eta: 50
 km: 120
 prezzzo: 24,50 */
+const kmDaPercorrereText =  prompt("Quanti km vuoi percorrere?")
+const kmDaPercorrere = parseInt(kmDaPercorrereText)
+const etaUtenteText = prompt("Quanti anni hai?")
+const etaUtente =  parseInt(etaUtenteText)
 
-let kmDaPercorrere = prompt("Quanti km vuoi percorrere?")
-let etaUtente = prompt("Quanti anni hai?")
-kmDaPercorrere = parseInt(kmDaPercorrere);
+
+
+let ticketPrice = 0.21 * kmDaPercorrere;
+
+/* va applicato uno sconto del 20% per i minorenni */
+/* se utente ha meno di 18 anni applica sconto*/
+if(etaUtente < 18){
+    /* applica sconto */
+    ticketPrice = ticketPrice - ticketPrice * 0.2;
+    
+console.log("applico sconto", ticketPrice)
+}  
+
+console.log("ticketPrice", ticketPrice)
 
 let spanTicketPrice = document.getElementById("ticketPrice")
 
-let ticketPrice = 0.21 * kmDaPercorrere
-
-let etaUtente < 18 = 0.21 * kmDaPercorrere == ticketPrice - 20%
-
 spanTicketPrice.innerHTML = `<span> ${kmDaPercorrere} ${etaUtente} ${ticketPrice}€</span>`
-
-if (etaUtente < 18) {
-    - 20%
-}   
-    
-
-
-
-
 
 
 /* 
