@@ -22,12 +22,16 @@ let ticketPrice = 0.21 * kmDaPercorrere;
 
 /* va applicato uno sconto del 20% per i minorenni */
 /* se utente ha meno di 18 anni applica sconto*/
-if(etaUtente < 18){
+if (etaUtente < 18){
     /* applica sconto */
-    ticketPrice = ticketPrice - ticketPrice * 0.2;
+    ticketPrice = (ticketPrice - (ticketPrice * 0.2));
     
 console.log("applico sconto", ticketPrice)
-}  
+} else if (etaUtente >= 65){
+    /* applica sconto */
+    ticketPrice = (ticketPrice - (ticketPrice * 0.4));
+}
+
 
 console.log("ticketPrice", ticketPrice)
 
